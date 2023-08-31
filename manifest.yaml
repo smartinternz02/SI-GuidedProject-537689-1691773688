@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abcapp
+  labels:
+    app: abcapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: abcapp
+  template:
+    metadata:
+      labels:
+        app: abcapp
+    spec:
+      containers:
+      - name: abcapp
+        image: uk.icr.io/srikanth/abctest
+        ports:
+        - containerPort: 5000

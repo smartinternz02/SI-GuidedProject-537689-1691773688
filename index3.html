@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> My College</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+ 
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+ 
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.success {background-color: #04AA6D;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+<h1>Welcome to MY COLLEGE</h1>
+  <p>Build the passion and zeal to grow</p> 
+</div>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Sridevi Taradi</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/index2">Home</a></li>
+	<li><a href="/register">Register</a></li>
+        <li><a href="/contact">Contacts</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="alert success">
+  <span class="closebtn">&times;</span>  
+  <strong>Success!</strong> Thank you for your details. Please visit our website for more details
+</div>
+
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>
+
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "ffe71248-6dbd-4f23-8ec5-0a94b3832e04", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "043dfff5-9a80-449f-954e-dbc4af666ecb", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</body>
+</html>
