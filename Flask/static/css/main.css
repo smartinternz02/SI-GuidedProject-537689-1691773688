@@ -1,0 +1,65 @@
+body {
+    display: block;
+    font-family: Verdana;
+    text-align: center; 
+}
+
+form  {
+    display: inline-block;
+    margin:30px ;
+    padding: 40px;
+    border: solid;
+    border-color: white;
+    border-width: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px rgb(245, 245, 245, 0.6);
+    text-align: left;
+    width: 280px;
+}
+table, tr, td {
+  border: 1px solid black;
+}
+.form-control {
+    margin-bottom: 10px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.btn-custom{
+    height: 24px;
+    width: 300px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #FFFFFF;
+}

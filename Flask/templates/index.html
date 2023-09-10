@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  
+</head>
+
+<body background='{{ url_for('static', filename='images/library.jpg') }}'>
+  <div class="navbar">
+    <a href="#"> University</a> 
+    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+    <a href="contactus"><i class="fa fa-fw fa-envelope"></i> Contact Us</a> 
+  </div>
+  <main>
+    <div class="intro" style="position:absolute;bottom:300px;left:120px;width:80%">
+      <h1>UNI-ACC</h1>
+      <p style="font-size:14px;color:red">A digital initiative by the institute facilitating Faculty, Students and Alumni to access and process Academics, Research, Supporting Services at one common platform.</p>
+    </div>
+    <div>
+        <table style="border:0px;position:absolute;bottom:170px;left:250px" width="80%">
+            <tr style="border:0px">
+                <td style="border:0px">
+                    <table style="border:0px">
+                        <tr style="border:0px">
+                            <td style="border:0px;" rowspan=2><img src="{{ url_for('static', filename='images/student.png') }}" width="45" height="30"></td>
+                            <td style="border:0px;font-size:12px;color:black">Student</td>
+                        </tr>
+                        <tr style="border:0px">
+                            <td style="border:0px;font-size:12px;color:white"><a href="login">LOGIN</a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="border:0px">
+                    <table style="border:0px">
+                        <tr>
+                            <td style="border:0px;" rowspan=2><img src="{{ url_for('static', filename='images/professor.png') }}" width="45" height="30"></td>
+                            <td style="border:0px;font-size:12px;color:black">Professor</td>
+                        </tr>
+                        <tr>
+                            <td style="border:0px;font-size:12px;color:black"><a href="login">LOGIN</a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="border:0px">
+                    <table style="border:0px">
+                        <tr>
+                            <td style="border:0px;" rowspan=2><img src="{{ url_for('static', filename='images/professor.png') }}" width="45" height="30"></td>
+                            <td style="border:0px;font-size:12px;color:black">Admin</td>
+                        </tr>
+                        <tr>
+                            <td style="border:0px;font-size:12px;color:black"><a href="login">LOGIN</a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+  </main>
+  <footer class="footer" style="position:absolute;bottom:50px;left:1100px;color:red">
+    <div class="copy">© 2023 Jayshree Jha</div>
+  </footer>
+</body>
+
+</html>

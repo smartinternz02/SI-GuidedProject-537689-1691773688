@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Contact Us</title>
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    </head>
+    <body bgcolor="black">
+        <div class="navbar">
+          <a href="#"> University</a> 
+          <a href="/"><i class="fa fa-fw fa-home" class="split"></i> Home</a> 
+          <a class="active" href="#"><i class="fa fa-fw fa-envelope" class="split"></i> Contact Us</a>
+        </div>
+        <h2 style="color:white">{{msg}}</h2>
+        <table style="position:absolute;left:150px" width="80%">
+            <tr>
+                <td>
+                     <form id="form" action="{{ url_for('feedback')}}" method="post">
+                         <div class="form-control">
+                             <input type="text" name="name" id="name" placeholder="Name" size=40><br>
+                         </div>
+                         <div class="form-control">
+                             <input type="text" name="email" id="email" placeholder="E-mail" size=40><br>
+                         </div>
+                         <div class="form-control">
+                             <input type="text" name="registrationNumber" id="registrationNumber" placeholder="Registration Number" size=40><br>
+                         </div>
+                         <div class="form-control">
+                             <textarea name="feedback" id="feedback" placeholder="Feedback" rows=10 cols=38 ></textarea><br>
+                         </div>
+                         <div class="form-control">
+                             <button type="submit" class="btn-custom">Send Message</button>
+                         </div>
+                    </form>
+                </td>
+                <td>
+                    <p style="color:white">If you are facing any issues, you can fill the form that is provided or you can contact the CTO of the University on the details listed below.
+                    </p>
+                    <p style="color:white">Ms. Jayshree Jha<br>Chief Technology Officer</p>
+                    <p style="color:white">
+                        <img src="{{ url_for('static', filename='images/location.png') }}" width="15" height="20">&nbsp;CTO Office, Administration Building.
+                    </p>
+                    <p style="color:white">
+                        <img src="{{ url_for('static', filename='images/contact_no.png') }}" width="15" height="20">&nbsp;+91 3748 2445 32
+                    </p>
+                    <p style="color:white">
+                        <img src="{{ url_for('static', filename='images/email.png') }}" width="20" height="15">&nbsp;cto@university.com
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        
+        <!-- Main CSS File -->
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    </head>
+    <body bgcolor="black">
+        <div class="navbar">
+          <a href="#"> University</a> 
+          <a class="active" href="/"><i class="fa fa-fw fa-home" class="split"></i> Home</a> 
+          <a href="contactus"><i class="fa fa-fw fa-envelope" class="split"></i> Contact Us</a>
+        </div>
+        <table style="position:absolute;left:150px" width="80%">
+            <tr>
+                <td>
+                    <!-- form begins -->
+                    <h3 style="color:white">Please enter your login and password</h3>
+                    <form id="form" method="post" action="{{ url_for('login') }}">
+                        <div class="form-control">
+                            <label for="email">Email</label><br>
+                            <input type="text" name="email" id="email" placeholder="Email" size=35><br>
+                        </div>
+                        <div class="form-control">
+                            <label for="pwd">Password</label><br>
+                            <input type="password" name="pwd" id="pwd" placeholder="Password" size=35><br>
+                        </div>
+                        <div class="form-control" align="center">
+                            <button type="submit" class="btn-custom" style="width:150px">Login</button>
+                        </div>
+                    </form>
+                    <!-- form end -->
+                </td>
+            </tr>
+        </table>
+        <h2 style="color:white">{{msg}}</h2>
+    </body>
+</html>

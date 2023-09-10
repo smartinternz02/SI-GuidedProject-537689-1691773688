@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+    <title>Student Profile</title>
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--Top menu -->
+      <div class="sidebar">
+        <!--profile image & text-->
+        <div class="profile">
+          <img
+            src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
+            alt="profile_picture"
+          />
+          <h3>{{ name }} </h3>
+          <p>{{role}}</p>
+        </div>
+        <!--menu item-->
+        <ul>
+            
+            <li>
+                <a href="#" class="active">
+                    <span class="icon"><i class="fas fa-desktop"></i></span>
+                    <span class="item">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="/studentassignment">
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Assignment</span>
+                </a>
+            </li>
+            <li>
+                <a href="/contactus">
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Feedback</span>
+                </a>
+            </li>
+            <li>
+              <a href="/">
+                  <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                  <span class="item">Logout</span>
+              </a>
+          </li>
+            
+        </ul>
+      </div>
+      <div class="main_content">
+      <h2> Your Details</h2>
+        <table>
+          <tr> 
+            <td> Name </td>
+            <td> {{ name }} </td>
+          </tr>
+          <tr> 
+            <td> Email </td>
+            <td> {{ email }} </td>
+          </tr>
+          <tr> 
+            <td> Contact </td>
+            <td> {{ contact }} </td>
+          </tr>
+          <tr> 
+            <td> Address </td>
+            <td> {{ address }} </td>
+          </tr>
+          <tr> 
+            <td> Role </td>
+            <td> {{ role }} </td>
+          </tr>
+          <tr> 
+            <td> Branch </td>
+            <td> {{ branch }} </td>
+          </tr>
+        </table>
+        
+      </div>
+    </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

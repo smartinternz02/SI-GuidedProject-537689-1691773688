@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Feedback</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+          <!--Top menu -->
+          <div class="sidebar">
+            <!--profile image & text-->
+            <div class="profile">
+              <img
+                src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
+                alt="profile_picture"
+              />
+              <h3>{{ name }} </h3>
+              <p>{{role}}</p>
+            </div>
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/fill_registration_form">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Register</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/comments" class="active">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Comments</span>
+                    </a>
+                </li>
+                <li>
+                  <a href="/">
+                      <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                      <span class="item">Logout</span>
+                  </a>
+              </li>
+            </ul>
+          </div>
+        <div class="main_content">
+            <h3 style="width:80%;align:center;margin-top:2%;text-align:center">Feedback Comments</h3>
+            <table width="80%">
+                <tr> 
+                  <td>ID</td>
+                  <td>Name</td>
+                  <td>Email</td>
+                  <td>Registration No</td>
+                  <td>Comments</td>
+                </tr>
+                {% for i in comments: %}
+                <tr>
+                    {% for k,v in i.items(): %}
+                    <td> {{ v }} </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

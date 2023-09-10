@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Assignment</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+          <!--Top menu -->
+          <div class="sidebar">
+            <!--profile image & text-->
+            <div class="profile">
+              <img
+                src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
+                alt="profile_picture"
+              />
+              <h3>{{ name }} </h3>
+              <p>{{role}}</p>
+            </div>
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/studentassignment" class="active">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Assignment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/contactus">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Admin</span>
+                    </a>
+                </li>
+                <li>
+                  <a href="/">
+                      <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                      <span class="item">Logout</span>
+                  </a>
+              </li>
+                
+            </ul>
+          </div>
+        <div class="main_content">
+            <h3 style="width:100%;align:center;margin-top:2%;text-align:center">Assignments</h3>
+            <form id="form" style="width:100%;box-shadow:none;border-width:0px;margin:5px;padding:5px" action="{{ url_for('studentsubmit')}}" method="post">
+                <table width="100%">
+                    <tr style="font-size:12px"> 
+                      <td>Assignment No.</td>
+                      <td>Assignment Name</td>
+                      <td>Due Date</td>
+                      <td>Submitted Date</td>
+                      <td>Marks</td>
+                      <td>File</td>
+                      <td>Submission</td>
+                    </tr>
+                    
+                    {% for i in assignments: %}
+                    <tr style="font-size:12px">
+                        {% for k,v in i.items(): %}
+                            <td> {{ v }} </td>
+                        {% endfor %}
+                        <td style="font-size:12px">
+                            <label for="myfile">Select a file:</label>
+                            <input type="file" id="myfile" name="myfile" style="font-size:12px">
+                        </td>
+                        <td style="margin-top:2%;"><button style="font-size:12px" onclick="document.location='studentsubmit'">Submit</button></td>
+                        
+                    </tr>
+                    {% endfor %}
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

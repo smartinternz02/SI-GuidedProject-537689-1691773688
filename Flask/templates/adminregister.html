@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <!-- Main CSS File -->
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+     </head>
+    <body bgcolor="black" style="font-size:12px">
+        <div class="navbar">
+          <a href="#"> University</a> 
+          <a class="active" href="/"><i class="fa fa-fw fa-home" class="split"></i> Home</a> 
+          <a href="contactus"><i class="fa fa-fw fa-envelope" class="split"></i> Contact Us</a>
+        </div>
+        <!-- form begins -->
+        <form id="form" action="{{ url_for('register')}}" method="post">
+            <div class="form-control" style="font-size:12px">
+                <label for="name" style="color:white">Name</label><br>
+                <input type="text" name="name" id="name" placeholder="Name" size="35px"><br>
+            </div>
+            <div class="form-control">
+                <label for="email" style="color:white">Email</label><br>
+                <input type="text" name="email" id="email" placeholder="Email" size="35px"><br>
+            </div>
+            <div class="form-control">
+                <label for="mobile" style="color:white">Contact</label><br>
+                <input type="text" name="mobile" id="mobile" placeholder="Contact number" size="35px"><br>
+            </div>
+            <div class="form-control">
+                <label for="address" style="color:white">Address</label><br>
+                <textarea name="address" id="address" rows="3" cols="33"></textarea>
+            </div>
+            <div class="form-control">
+                <label for="role" style="color:white">Role</label><br>
+                <select id="role" name="role">
+                    <option value="1">Student</option>
+                    <option value="0">Faculty</option>
+                    <option values="2">New Admin</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="branch" style="color:white">Branch</label><br>
+                <select id="branch" name="branch">
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Civil">Civil</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="pwd" style="color:white">Password</label><br>
+                <input type="password" name="pwd" id="pwd" placeholder="Set the password" size="35px"><br>
+            </div>
+            <div class="form-control" align="center">
+                <button type="submit" class="btn-custom" style="width:100px">Submit</button>
+            </div>
+        </form>
+        <!-- form end -->
+        <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "451fb165-e237-4c91-b0f4-f05f828ea75d", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "1507e665-7001-40ba-b682-f9871b04180f", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+    </body>
+</html>
